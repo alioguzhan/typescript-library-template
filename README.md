@@ -2,6 +2,12 @@
 
 ## Install
 
+### Github Users
+
+Since this is a `template repository`, you can use that green `Use this template` button to start a new repository from this template.
+
+### Non-Github Users
+
 Clone the repository:
 
 ```
