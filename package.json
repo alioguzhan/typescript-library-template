@@ -23,7 +23,7 @@
     "test:ci": "cross-env CI=1 jest"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.2.0",
+    "@commitlint/cli": "^8.3.5",
     "@types/jest": "^24.0.24",
     "@types/node": "^13.5.0",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
