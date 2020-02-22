@@ -9,7 +9,7 @@
       "files.trimFinalNewlines": true,
       "editor.tabSize": 2,
       "editor.rulers": [
-        79
+        120
       ],
       "eslint.alwaysShowStatus": true,
       "diffEditor.ignoreTrimWhitespace": true,
@@ -40,4 +40,3 @@
       ],
     },
   }
-  

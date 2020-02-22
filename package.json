@@ -2,6 +2,8 @@
   "name": "change__here",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.bundle.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -17,8 +19,9 @@
     "type": "git"
   },
   "scripts": {
-    "start": "tsc -w",
-    "build": "tsc",
+    "start": "rollup -c rollup.config.js -w",
+    "build": "tsc && rollup -c rollup.config.js && yarn make:docs",
+    "make:docs": "typedoc",
     "test": "jest --coverage",
     "test:ci": "cross-env CI=1 jest"
   },
@@ -36,7 +39,15 @@
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-sourcemaps": "^0.5.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.26.0",
     "ts-jest": "^25.2.1",
+    "typedoc": "^0.16.10",
     "typescript": "^3.8.2"
   },
   "husky": {
