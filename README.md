@@ -70,3 +70,9 @@ Jest is configured and ready to use. Just run:
 ```
 yarn test
 ```
+
+## Docs
+
+This template uses [TypeDoc](https://typedoc.org/) by default.
+
+Run `yarn make:docs` and a folder named `docs` will be created in your root directory. Just open `index.html` in your browser to see if your like it or not.
