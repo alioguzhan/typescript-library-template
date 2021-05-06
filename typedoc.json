@@ -1,6 +1,10 @@
 {
   "out": "docs",
-  "inputFiles": "./src",
-  "mode": "modules",
-  "theme": "minimal"
+  "entryPoints": [
+    "./src"
+  ],
+  "exclude": "**/**/*+(.spec|.test).**",
+  "theme": "default",
+  "includeVersion": true,
+  "categorizeByGroup": true
 }

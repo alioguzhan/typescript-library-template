@@ -4,6 +4,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
+import external from 'rollup-plugin-peer-deps-external';
+import del from 'rollup-plugin-delete';
 import pkg from './package.json';
 
 export default {
@@ -13,23 +15,40 @@ export default {
       file: pkg.main,
       format: 'cjs',
       sourcemap: true,
+      plugins: [terser()],
+      exports: 'auto',
     },
     {
       file: pkg.module,
       format: 'es',
       sourcemap: true,
+      plugins: [terser()],
+      exports: 'auto',
+    },
+    {
+      file: 'dist/index.js',
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'auto',
     },
   ],
-  // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
-  external: [],
   watch: {
     include: 'src/**',
   },
   plugins: [
+    external(),
     // Allow json resolution
     json(),
     // Compile TypeScript files
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      exclude: ['**/__tests__/**', '*.spec.*', '*.test.*'],
+      clean: true,
+    }),
+    del({
+      targets: 'dist/*',
+      hook: 'buildStart',
+    }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),
     // Allow node_modules resolution, so you can use 'external' to control
@@ -39,6 +58,5 @@ export default {
 
     // Resolve source maps to the original source
     sourceMaps(),
-    terser({ include: [/^.+\.min\.js$/, '*.es.*'] }),
   ],
 };

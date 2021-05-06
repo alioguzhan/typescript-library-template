@@ -2,7 +2,12 @@
   "compilerOptions": {
     "target": "es5",
     "module": "ES6",
-    "lib": ["ES2017", "ES7", "ES6", "DOM"],
+    "lib": [
+      "ESNext",
+      "ES2017",
+      "ES7",
+      "ES6"
+    ],
     "declaration": true,
     "declarationDir": "dist",
     "outDir": "dist",
@@ -15,6 +20,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
   },
-  "exclude": ["node_modules", "dist", "**/*.test.ts"],
-  "include": ["src/**/*"]
+  "exclude": [
+    "node_modules",
+    "dist",
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }
