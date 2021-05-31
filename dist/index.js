@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
- * say people hi.
+ * say hi to people.
  * @param {string} name
  * @returns {string}
  */

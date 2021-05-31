@@ -45,18 +45,21 @@ export default {
       exclude: ['**/__tests__/**', '*.spec.*', '*.test.*'],
       clean: true,
     }),
-    del({
-      targets: 'dist/*',
-      hook: 'buildStart',
-    }),
     // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
     commonjs(),
     // Allow node_modules resolution, so you can use 'external' to control
     // which external modules to include in the bundle
     // https://github.com/rollup/rollup-plugin-node-resolve#usage
     resolve(),
-
     // Resolve source maps to the original source
     sourceMaps(),
+    del({
+      targets: 'dist/*',
+      hook: 'buildStart',
+    }),
+    del({
+      targets: ['dist/index.test.d.ts', 'dist/index.test.d.ts.map'],
+      hook: 'writeBundle',
+    }),
   ],
 };

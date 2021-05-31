@@ -1,12 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "ES6",
+    "module": "ESNext",
     "lib": [
       "ESNext",
-      "ES2017",
-      "ES7",
-      "ES6"
     ],
     "declaration": true,
     "declarationDir": "dist",
@@ -23,6 +20,9 @@
   "exclude": [
     "node_modules",
     "dist",
+    "src/__tests__",
+    "**/*.test.tsx",
+    "**/*.spec.tsx",
   ],
   "include": [
     "src/**/*"
