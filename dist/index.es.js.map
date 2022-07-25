@@ -1,1 +1,0 @@
-{"version":3,"file":"index.es.js","sources":["../src/index.ts"],"sourcesContent":["/**\n * say hi to people.\n * @param {string} name\n * @returns {string}\n */\nexport function sayHi(name: string): string {\n  return `Hi, ${name}`;\n}\n"],"names":["sayHi","name"],"mappings":"SAKgBA,EAAMC,GACpB,MAAO,OAAOA"}
