@@ -6,6 +6,8 @@
 
 Since this is a `template repository`, you can use that green `Use this template` button to start a new repository from this template.
 
+> Do not forget to remove `CHANGELOG.md` file and update the `change__here` values in several files. You can also remove this README file.
+
 ### Non-Github Users
 
 Clone the repository:
@@ -28,6 +30,7 @@ rm -rf .git && git init
 ```
 
 > You can check if there are any outdated package with [npm-check-updates](https://www.npmjs.com/package/npm-check-updates) tool.
+> Do not forget to remove `CHANGELOG.md` file and update the `change__here` values in several files. You can also remove this README file.
 
 ## Development
 
