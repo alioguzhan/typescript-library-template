@@ -10,7 +10,7 @@ Since this is a `template repository`, you can use that green `Use this template
 
 Clone the repository:
 
-```
+```bash
 git clone --depth 1 git@github.com:alioguzhan/typescript-library-template.git
 ```
 
@@ -23,7 +23,7 @@ yarn install
 If you want to change or remove some parts of this template, do it before start development.
 Once you feel ready, remove the `.git` folder and start a new one:
 
-```
+```bash
 rm -rf .git && git init
 ```
 
@@ -35,7 +35,7 @@ rm -rf .git && git init
 
 Write your library code to `index.ts` file and run:
 
-```
+```bash
 yarn start
 ```
 
@@ -49,7 +49,7 @@ To learn more about conventional commits see [its website](https://www.conventio
 
 You can remove that section from `package.json` also remove the related packages:
 
-```
+```bash
 yarn remove -D husky @commitlint/cli
 ```
 
@@ -57,7 +57,7 @@ yarn remove -D husky @commitlint/cli
 
 Run:
 
-```
+```bash
 yarn build
 ```
 
@@ -67,7 +67,7 @@ This will create your compiled files under `./dist` folder.
 
 Jest is configured and ready to use. Just run:
 
-```
+```bash
 yarn test
 ```
 
