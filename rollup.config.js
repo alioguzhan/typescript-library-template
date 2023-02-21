@@ -1,14 +1,16 @@
-import commonjs from 'rollup-plugin-commonjs';
-import del from 'rollup-plugin-delete';
-import json from 'rollup-plugin-json';
-import resolve from 'rollup-plugin-node-resolve';
-import external from 'rollup-plugin-peer-deps-external';
-import sourceMaps from 'rollup-plugin-sourcemaps';
-import { terser } from 'rollup-plugin-terser';
-import typescript from 'rollup-plugin-typescript2';
-import pkg from './package.json';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const commonjs = require('@rollup/plugin-commonjs');
+const json = require('@rollup/plugin-json');
+const resolve = require('@rollup/plugin-node-resolve');
+const external = require('rollup-plugin-peer-deps-external');
+const postcss = require('rollup-plugin-postcss');
+const sourceMaps = require('rollup-plugin-sourcemaps');
+const { terser } = require('rollup-plugin-terser');
+const typescript = require('rollup-plugin-typescript2');
+const pkg = require('./package.json');
+const del = require('rollup-plugin-delete');
 
-export default {
+module.exports = {
   input: `src/index.ts`,
   output: [
     {
@@ -37,6 +39,9 @@ export default {
   },
   plugins: [
     external(),
+    postcss({
+      modules: true,
+    }),
     // Allow json resolution
     json(),
     // Compile TypeScript files
